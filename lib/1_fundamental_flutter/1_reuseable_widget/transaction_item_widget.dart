@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:training/fundamental_flutter/reuseable_widget/transaction_item.dart';
+import 'package:training/1_fundamental_flutter/1_reuseable_widget/transaction_item.dart';
 
 class TransactionItemWidget extends StatelessWidget {
   const TransactionItemWidget({

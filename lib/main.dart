@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:training/fundamental_flutter/reuseable_widget/ListBudgetScreen.dart';
+import 'package:training/1_fundamental_flutter/1_reuseable_widget/ListBudgetScreen.dart';
 
 void main() {
   runApp(const MyApp());

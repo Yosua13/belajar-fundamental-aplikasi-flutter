@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:training/fundamental_flutter/reuseable_widget/header.dart';
-import 'package:training/fundamental_flutter/reuseable_widget/request_item.dart';
-import 'package:training/fundamental_flutter/reuseable_widget/request_item_widget.dart';
-import 'package:training/fundamental_flutter/reuseable_widget/transaction_item.dart';
-import 'package:training/fundamental_flutter/reuseable_widget/transaction_item_widget.dart';
+import 'package:training/1_fundamental_flutter/1_reuseable_widget/header.dart';
+import 'package:training/1_fundamental_flutter/1_reuseable_widget/request_item.dart';
+import 'package:training/1_fundamental_flutter/1_reuseable_widget/request_item_widget.dart';
+import 'package:training/1_fundamental_flutter/1_reuseable_widget/transaction_item.dart';
+import 'package:training/1_fundamental_flutter/1_reuseable_widget/transaction_item_widget.dart';
 
 import 'button.dart';
 
