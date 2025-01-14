@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:training/2_desain_ui_dengan_widget/screen/home/home_screen.dart';
+import 'package:training/1_fundamental_flutter/2_latihan_tourism_app/screen/home/home_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

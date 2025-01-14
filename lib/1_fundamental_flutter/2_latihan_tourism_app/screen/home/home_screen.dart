@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:training/2_desain_ui_dengan_widget/model/tourism.dart';
-import 'package:training/2_desain_ui_dengan_widget/screen/home/tourism_card_widget.dart';
+import 'package:training/1_fundamental_flutter/2_latihan_tourism_app/model/tourism.dart';
+import 'package:training/1_fundamental_flutter/2_latihan_tourism_app/screen/home/tourism_card_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
