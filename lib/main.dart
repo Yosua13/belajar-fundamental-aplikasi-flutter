@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:training/1_fundamental_flutter/3_latihan_penerapan_lifecycle/my_stateful_widget_page.dart';
+import 'package:training/1_fundamental_flutter/4_navigation_routing/another_screen.dart';
+import 'package:training/1_fundamental_flutter/4_navigation_routing/first_screen.dart';
+import 'package:training/1_fundamental_flutter/4_navigation_routing/replacement_screen.dart';
+import 'package:training/1_fundamental_flutter/4_navigation_routing/return_data_screen.dart';
+import 'package:training/1_fundamental_flutter/4_navigation_routing/second_screen.dart';
+import 'package:training/1_fundamental_flutter/4_navigation_routing/second_screen_with_data.dart';
 
 void main() {
   runApp(const MyApp());
@@ -43,7 +49,17 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyStatefulWidget(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const FirstScreen(),
+        '/second': (context) => const SecondScreen(),
+        '/second-with-data': (context) => SecondScreenWithData(
+              data: ModalRoute.of(context)?.settings.arguments as String,
+            ),
+        '/return-data': (context) => const ReturnDataScreen(),
+        '/replacement': (context) => const ReplacementScreen(),
+        '/another': (context) => const AnotherScreen(),
+      },
     );
   }
 }
