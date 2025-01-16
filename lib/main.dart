@@ -6,6 +6,8 @@ import 'package:training/1_fundamental_flutter/4_navigation_routing/replacement_
 import 'package:training/1_fundamental_flutter/4_navigation_routing/return_data_screen.dart';
 import 'package:training/1_fundamental_flutter/4_navigation_routing/second_screen.dart';
 import 'package:training/1_fundamental_flutter/4_navigation_routing/second_screen_with_data.dart';
+import 'package:training/1_fundamental_flutter/5_interaction/detector_example.dart';
+import 'package:training/1_fundamental_flutter/5_interaction/listener_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -49,17 +51,18 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const FirstScreen(),
-        '/second': (context) => const SecondScreen(),
-        '/second-with-data': (context) => SecondScreenWithData(
-              data: ModalRoute.of(context)?.settings.arguments as String,
-            ),
-        '/return-data': (context) => const ReturnDataScreen(),
-        '/replacement': (context) => const ReplacementScreen(),
-        '/another': (context) => const AnotherScreen(),
-      },
+      home: GestureDetectorExample(),
+      // initialRoute: '/',
+      // routes: {
+      //   '/': (context) => const FirstScreen(),
+      //   '/second': (context) => const SecondScreen(),
+      //   '/second-with-data': (context) => SecondScreenWithData(
+      //         data: ModalRoute.of(context)?.settings.arguments as String,
+      //       ),
+      //   '/return-data': (context) => const ReturnDataScreen(),
+      //   '/replacement': (context) => const ReplacementScreen(),
+      //   '/another': (context) => const AnotherScreen(),
+      // },
     );
   }
 }
