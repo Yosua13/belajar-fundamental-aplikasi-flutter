@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:training/2_desain_ui_dengan_widget/1_layout_constraint/expanded_widget.dart';
 import 'package:training/2_desain_ui_dengan_widget/1_layout_constraint/flexible_widget.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
