@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:training/1_fundamental_flutter/3_latihan_penerapan_lifecycle/my_stateful_widget_page.dart';
-import 'package:training/1_fundamental_flutter/4_navigation_routing/another_screen.dart';
-import 'package:training/1_fundamental_flutter/4_navigation_routing/first_screen.dart';
-import 'package:training/1_fundamental_flutter/4_navigation_routing/replacement_screen.dart';
-import 'package:training/1_fundamental_flutter/4_navigation_routing/return_data_screen.dart';
-import 'package:training/1_fundamental_flutter/4_navigation_routing/second_screen.dart';
-import 'package:training/1_fundamental_flutter/4_navigation_routing/second_screen_with_data.dart';
-import 'package:training/1_fundamental_flutter/5_interaction/detector_example.dart';
-import 'package:training/1_fundamental_flutter/5_interaction/listener_screen.dart';
-import 'package:training/1_fundamental_flutter/6_latihan_gesture_detector/home_page.dart';
+import 'package:training/1_fundamental_flutter/7_latihan_tourism_app/screen/detail/detail_screen.dart';
+import 'package:training/1_fundamental_flutter/7_latihan_tourism_app/screen/home/home_screen.dart';
+import 'package:training/1_fundamental_flutter/7_latihan_tourism_app/static/navigation_route.dart';
+
+import '1_fundamental_flutter/7_latihan_tourism_app/model/tourism.dart';
 
 void main() {
   runApp(const MyApp());
@@ -47,23 +42,18 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Lifecycle App',
+      title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: HomePage(),
-      // initialRoute: '/',
-      // routes: {
-      //   '/': (context) => const FirstScreen(),
-      //   '/second': (context) => const SecondScreen(),
-      //   '/second-with-data': (context) => SecondScreenWithData(
-      //         data: ModalRoute.of(context)?.settings.arguments as String,
-      //       ),
-      //   '/return-data': (context) => const ReturnDataScreen(),
-      //   '/replacement': (context) => const ReplacementScreen(),
-      //   '/another': (context) => const AnotherScreen(),
-      // },
+      initialRoute: NavigationRoute.homeRoute.name,
+      routes: {
+        NavigationRoute.homeRoute.name: (context) => const HomeScreen(),
+        NavigationRoute.detailRoute.name: (context) => DetailScreen(
+              tourism: ModalRoute.of(context)?.settings.arguments as Tourism,
+            ),
+      },
     );
   }
 }
