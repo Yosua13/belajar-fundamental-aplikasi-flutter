@@ -3,22 +3,18 @@ import 'package:training/2_desain_ui_dengan_widget/3_tourism_app_theme/model/tou
 import 'package:training/2_desain_ui_dengan_widget/3_tourism_app_theme/screen/detail/detail_screen.dart';
 import 'package:training/2_desain_ui_dengan_widget/3_tourism_app_theme/screen/home/home_screen.dart';
 import 'package:training/2_desain_ui_dengan_widget/3_tourism_app_theme/static/navigation_route.dart';
-import 'package:training/2_desain_ui_dengan_widget/3_tourism_app_theme/style/themes/tourism_theme.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyAppTAConstraint extends StatelessWidget {
+  const MyAppTAConstraint({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Tourism App',
-      theme: TourismTheme.lightTheme,
-      darkTheme: TourismTheme.darkTheme,
-      themeMode: ThemeMode.system,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
       initialRoute: NavigationRoute.homeRoute.name,
       routes: {
         NavigationRoute.homeRoute.name: (context) => const HomeScreen(),
