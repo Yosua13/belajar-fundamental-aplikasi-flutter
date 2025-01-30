@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:training/2_desain_ui_dengan_widget/4_slivers/sliver_appbar.dart';
-import 'package:training/2_desain_ui_dengan_widget/4_slivers/sliver_grid_app.dart';
-import 'package:training/2_desain_ui_dengan_widget/4_slivers/sliver_list_app.dart';
+import 'package:training/2_desain_ui_dengan_widget/5_latihan_slivers/screens/learning_path_screen.dart';
+import 'package:training/2_desain_ui_dengan_widget/5_latihan_slivers/utils/sliver_header_delegate.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,10 +11,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Sliver App Example",
-      home: SliverAppbar(),
+      title: "Sliver App",
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: const LearningPathScreen(),
     );
   }
 }
