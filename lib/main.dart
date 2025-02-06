@@ -1,5 +1,6 @@
 import 'package:training/4_networking/2_http/fetch_content.dart';
 import 'package:training/4_networking/2_http/get_content.dart';
+import 'package:training/4_networking/2_http/result.dart';
 
 void main() async {
   getContent();
