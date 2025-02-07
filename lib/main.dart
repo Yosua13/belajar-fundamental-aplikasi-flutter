@@ -1,17 +1,21 @@
-import 'package:training/4_networking/2_http/fetch_content.dart';
-import 'package:training/4_networking/2_http/get_content.dart';
-import 'package:training/4_networking/2_http/result.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:training/4_networking/3_tourism_api_future_builder/my_app_ta_constraint.dart';
+import 'package:training/4_networking/3_tourism_api_future_builder/provider/detail/bookmark_list_provider.dart';
+import 'package:training/4_networking/3_tourism_api_future_builder/provider/main/index_nav_provider.dart';
 
-void main() async {
-  getContent();
-  postContent();
-  putContent();
-  deleteContent();
-  final output = await fetchContent();
-  switch (output) {
-    case Success(value: var data):
-      print("Success: $data");
-    case Failure(error: var message):
-      print("Failure: $message");
-  }
+void main() {
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => IndexNavProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => BookmarkListProvider(),
+        ),
+      ],
+      child: const MyAppTAConstraint(),
+    ),
+  );
 }
