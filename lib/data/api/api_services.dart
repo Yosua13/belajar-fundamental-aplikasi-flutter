@@ -39,7 +39,7 @@ class ApiServices {
     }
   }
 
-  Future<RestaurantReviewResponse> getRestaurantAddReview(
+  Future<RestaurantReviewResponse> addRestaurantReview(
     String id,
     String name,
     String review,
@@ -47,14 +47,15 @@ class ApiServices {
     final url = Uri.parse("$_baseUrl/review");
     final response = await http.post(
       url,
-      body: {
+      headers: {"Content-Type": "application/json"},
+      body: jsonEncode({
         "id": id,
         "name": name,
         "review": review,
-      },
+      }),
     );
 
-    if (response.statusCode == 200) {
+    if (response.statusCode == 200 || response.statusCode == 201) {
       return RestaurantReviewResponse.fromJson(jsonDecode(response.body));
     } else {
       throw Exception('Failed to add review');

@@ -1,9 +1,8 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:restaurant_app/provider/detail/restaurant_detail_provider.dart';
-import 'package:restaurant_app/screen/detail/body_of_detail_screen_widget.dart';
+import 'package:restaurant_app/screen/detail/detail_content_widget.dart';
 import 'package:restaurant_app/static/restaurant_detail_state.dart';
 
 class DetailScreen extends StatefulWidget {
@@ -41,7 +40,9 @@ class _DetailScreenState extends State<DetailScreen> {
                   child: CircularProgressIndicator(),
                 ),
               RestaurantDetailLoadedState(data: var restaurant) =>
-                BodyOfDetailScreenWidget(restaurant: restaurant),
+                BodyOfDetailScreenWidget(
+                  restaurant: restaurant,
+                ),
               RestaurantDetailErrorState(error: var message) => Center(
                   child: Text(message),
                 ),

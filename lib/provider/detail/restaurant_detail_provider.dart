@@ -32,4 +32,24 @@ class RestaurantDetailProvider extends ChangeNotifier {
       notifyListeners();
     }
   }
+
+  Future<void> addReview(String id, String name, String review) async {
+    try {
+      _resultState = RestaurantReviewLoadingState();
+      notifyListeners();
+
+      final response = await _apiServices.addRestaurantReview(id, name, review);
+
+      if (response.error) {
+        _resultState = RestaurantReviewErrorState(response.message);
+        notifyListeners();
+      } else {
+        _resultState = RestaurantReviewSuccessState(response.customerReviews);
+        notifyListeners();
+      }
+    } catch (e) {
+      _resultState = RestaurantReviewErrorState(e.toString());
+      notifyListeners();
+    }
+  }
 }

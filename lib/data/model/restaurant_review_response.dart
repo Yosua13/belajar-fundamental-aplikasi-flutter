@@ -1,7 +1,7 @@
 class RestaurantReviewResponse {
-  bool error;
-  String message;
-  List<CustomerReview> customerReviews;
+  final bool error;
+  final String message;
+  final List<CustomerReview> customerReviews;
 
   RestaurantReviewResponse({
     required this.error,
@@ -27,9 +27,9 @@ class RestaurantReviewResponse {
 }
 
 class CustomerReview {
-  String name;
-  String review;
-  String date;
+  final String name;
+  final String review;
+  final String date;
 
   CustomerReview({
     required this.name,
